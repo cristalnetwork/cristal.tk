@@ -49,15 +49,19 @@ export const Card: React.FunctionComponent<ICard> = ({
     return (
         <div className="w-1/2 sm:w-full flex px-14 pb-20 sm:px-0 sm:px-10 card_col magic_fade_in">
 	    <div className="card d-flex flex-column align-items-center justify-content-start text-center trans_200">
-		<div className="card_icon"><img className="svg" src="images/icon_4.svg" alt="https://www.flaticon.com/authors/freepik"/></div>
-		<div className="card_title">
+                {image &&
+	         <div className="card_icon ml-auto mr-auto">
+                     <Image className="svg" src={image} alt="https://www.flaticon.com/authors/freepik"/>
+                </div>}
+
+	        <div className="card_title">
                     <h3 dangerouslySetInnerHTML={{ __html: title }}/>
                 </div>
                 { subtitle && <div className="card_title">
                     <h4 dangerouslySetInnerHTML={{ __html: subtitle }}/>
                 </div>}
-		<div className="card_text" dangerouslySetInnerHTML={{ __html: description }}>
-		</div>
+	        <div className="card_text" dangerouslySetInnerHTML={{ __html: description }}>
+	        </div>
                 {button && <div className="card_button trans_200"><a href={button.href}>{button.caption}</a></div>}
 	    </div>
 	</div>
