@@ -38,7 +38,7 @@
         top: 147px;
         left: -138px;
         -webkit-animation: cloud_anim 60s -39s linear infinite;
-        animation: cloud_anim 60s -39s linear infinite;
+        animation: cloud_anim 50s -39s linear infinite;
     }
     .cloud_2
     {
@@ -52,7 +52,7 @@
         top: 332px;
         left: -138px;
         -webkit-animation: cloud_anim 60s -45s linear infinite;
-        animation: cloud_anim 60s -45s linear infinite;
+        animation: cloud_anim 40s -45s linear infinite;
     }
     .cloud_4
     {
@@ -66,22 +66,22 @@
     {
         0%
         {
-	    left: -138px;
+	    transform: translate3d(0, 0, 0);
         }
         100%
         {
-	    left: calc(100vw + 138px);
+	    transform: translate3d(120vw, 0, 0);
         }
     }
     @keyframes cloud_anim
     {
         0%
         {
-	    left: -138px;
+	    transform: translate3d(0, 0, 0);
         }
         100%
         {
-	    left: calc(100vw + 138px);
+	    transform: translate3d(120vw, 0, 0);
         }
     }
     .home_container
