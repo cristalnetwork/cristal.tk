@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
+import { withRouteData } from 'react-static';
 import cn from 'clsx';
 
 import { ActionBar, IActionBar } from 'src/components/ActionBar';
@@ -111,3 +112,5 @@ export const Roadmap: React.FunctionComponent<IRoadmap> = ({
         </Section>
     );
 };
+
+export default withRouteData(Roadmap)

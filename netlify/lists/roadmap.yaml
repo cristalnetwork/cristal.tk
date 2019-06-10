@@ -1,5 +1,6 @@
 path: /roadmap
 tag: 'roadmap'
+component: 'Roadmap'
 subtitle: O caminho pro Nirvana
 title: Mapa de desenvolvimento
 actionBar:

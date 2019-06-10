@@ -138,17 +138,13 @@ export const DefaultList: React.FunctionComponent<IList> = ({
     );
 };
 
-export const List: React.FunctionComponent<IList> = ({pageName, ...args}) => {
-
-    let ListComponent = DefaultList
-    if (listRegistery.hasOwnProperty(pageName)) {
-        ListComponent = listRegistery[pageName]
-    }
-
-    console.error('args', args)
+export const List: React.FunctionComponent<IList> = ({component, ...args}) => {
+    let ListComponent =
+        component ? require(`src/components/${component}`).default
+        : DefaultList
 
     return (
-        <ListComponent pageName={pageName} {...args}/>
+        <ListComponent {...args}/>
     )
 }
 
