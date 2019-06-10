@@ -29,7 +29,7 @@ export interface IMilestone {
     icon: IIcon;
 }
 
-export interface IMilestones {
+export interface IRoadmap {
     title?: string;
     subtitle?: string;
     items: IMilestone[];
@@ -71,7 +71,7 @@ export const Milestone: React.FunctionComponent<IMilestone> = ({
 };
 
 
-export const Roadmap: React.FunctionComponent<IMilestones> = ({
+export const Roadmap: React.FunctionComponent<IRoadmap> = ({
     title,
     subtitle,
     description,
