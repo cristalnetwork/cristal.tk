@@ -9,6 +9,11 @@ import { Link } from 'src/components/Link';
 import { IPagination, Pagination } from 'src/components/Pagination';
 import { Section } from 'src/components/Section';
 import { ITab } from 'src/components/Tabs';
+import { Roadmap } from 'src/components/Roadmap'
+
+export const listRegistery = {
+    Roadmap,
+}
 
 export interface IListItem {
   title: string;
@@ -91,46 +96,60 @@ export const ListItem: React.FunctionComponent<IListItem> = ({
   );
 };
 
-export const List: React.FunctionComponent<IList> = ({
-  color,
-  title,
-  subtitle,
-  pageName,
-  tabs,
-  items,
-  hero,
-  actionBar,
-  pagination,
+export const DefaultList: React.FunctionComponent<IList> = ({
+    color,
+    title,
+    subtitle,
+    pageName,
+    tabs,
+    items,
+    hero,
+    actionBar,
+    pagination,
 }) => {
-  return (
-    <React.Fragment>
-      <Hero {...hero} bgColor={color} title={title} subtitle={subtitle} pageName={pageName} tabs={tabs} />
+    return (
+        <React.Fragment>
+            <Hero {...hero} bgColor={color} title={title} subtitle={subtitle} pageName={pageName} tabs={tabs} />
 
-      <Section className="z-5 pt-24 md:pt-0" noPadding>
-        {items && items.length > 0 ? (
-          <React.Fragment>
-            <div className="container">
-              {items.map((item, index) => (
-                <ListItem key={index} {...item} />
-              ))}
-            </div>
+            <Section className="z-5 pt-24 md:pt-0" noPadding>
+                {items && items.length > 0 ? (
+                    <React.Fragment>
+                        <div className="container">
+                            {items.map((item, index) => (
+                                <ListItem key={index} {...item} />
+                            ))}
+                        </div>
 
-            {pagination && <Pagination {...pagination} color={color} />}
-          </React.Fragment>
-        ) : (
-          <div className="container">
-            <div className="text-center p-12 sm:p-4 text-white opacity-75" />
-          </div>
-        )}
-      </Section>
+                        {pagination && <Pagination {...pagination} color={color} />}
+                    </React.Fragment>
+                ) : (
+                    <div className="container">
+                        <div className="text-center p-12 sm:p-4 text-white opacity-75" />
+                    </div>
+                )}
+            </Section>
 
-      {actionBar && (
-        <div className="md:pb-24 pb-40 mt-32">
-          <ActionBar className="bg-white" {...actionBar} />
-        </div>
-      )}
-    </React.Fragment>
-  );
+            {actionBar && (
+                <div className="md:pb-24 pb-40 mt-32">
+                    <ActionBar className="bg-white" {...actionBar} />
+                </div>
+            )}
+        </React.Fragment>
+    );
 };
+
+export const List: React.FunctionComponent<IList> = ({pageName, ...args}) => {
+
+    let ListComponent = DefaultList
+    if (listRegistery.hasOwnProperty(pageName)) {
+        ListComponent = listRegistery[pageName]
+    }
+
+    console.error('args', args)
+
+    return (
+        <ListComponent pageName={pageName} {...args}/>
+    )
+}
 
 export default withRouteData(List);

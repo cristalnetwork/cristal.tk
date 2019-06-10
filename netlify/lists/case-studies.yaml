@@ -1,0 +1,16 @@
+path: /case-studies
+tag: 'case-study'
+subtitle: Discover & Educate
+title: Case Studies
+actionBar:
+  enabled: true
+pageName: CaseStudies
+meta:
+  favicon: /images/mark_light_bg.png
+  title: Read Our Case Studies | Stoplight
+  description: Discover some of our best and most celebrated achievements through our case studies, including work from companies located across the world.
+  twitter:
+    title: Read Our Case Studies | Stoplight
+    username: '@stoplightio'
+pagination:
+  enabled: true

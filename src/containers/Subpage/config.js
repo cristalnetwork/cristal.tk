@@ -148,6 +148,36 @@ export const CaseStudyConfig = {
   })
 }
 
+export const RoadmapConfig = {
+    ...SubpageConfig,
+  label: 'Roadmap',
+  label_singular: 'Milestone',
+  name: 'roadmap',
+  folder: 'netlify/roadmap',
+  fields: addFields(SubpageConfig.fields, SubpageConfig.fields.length - 3, [
+    {
+      label: 'Sidebar',
+      name: 'sidebar',
+      widget: 'object',
+      fields: [info, quote]
+    }
+  ]).map(field => {
+    // Don't allow ToC for roadmap page
+    if (field && field.name === 'includeToc') {
+      return {
+        label: 'Include table of contents? (default: false)',
+        name: 'includeToc',
+        widget: 'hidden',
+        required: false,
+        default: false
+      }
+    }
+
+    return field
+  })
+}
+
+
 export const BlogPostConfig = {
   ...SubpageConfig,
   label: 'Blog Posts',

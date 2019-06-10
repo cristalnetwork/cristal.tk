@@ -1,0 +1,103 @@
+.roadmap
+{
+    width: 100%;
+    background: #FFFFFF;
+    padding-top: 96px;
+    padding-bottom: 97px;
+}
+.roadmap_row
+{
+    margin-top: 98px;
+}
+.roadmap_dots
+{
+    position: absolute;
+    top: -137px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.milestone_icon_container
+{
+    width: 143px;
+    height: 143px;
+    border-radius: 50%;
+    background: #d5dfe3;
+}
+.milestone_col:nth-child(3) .milestone_icon_container
+{
+    background: #1befc5;
+}
+.milestone_icon_container::before
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 188px;
+    height: 188px;
+    border-radius: 50%;
+    z-index: 0;
+    background: rgba(213,223,227,0.25);
+    content: '';
+}
+.milestone_col:nth-child(3) .milestone_icon_container::before
+{
+    background: rgba(27,239,197,0.25);
+}
+.milestone_icon
+{
+    width: 56px;
+    height: 56px;
+}
+.milestone_icon img
+{
+    max-width: 100%;
+}
+.milestone_content
+{
+    padding-top: 66px;
+}
+.milestone_title
+{
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f1d22;
+    line-height: 1.2;
+}
+.milestone_text
+{
+    margin-top: 27px;
+}
+.milestone_button
+{
+    width: 257px;
+    height: 63px;
+    border-radius: 12px;
+    background: #715691;
+    margin-top: 86px;
+}
+.milestone_button:hover
+{
+    background: #1befc5;
+}
+.milestone_button a
+{
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 63px;
+}
+
+path {
+    stroke-width: 2;
+    stroke-dasharray: 5 5;
+}

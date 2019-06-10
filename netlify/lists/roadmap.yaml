@@ -1,0 +1,13 @@
+path: /roadmap
+tag: 'roadmap'
+subtitle: O caminho pro Nirvana
+title: Mapa de desenvolvimento
+actionBar:
+  enabled: true
+pageName: Roadmap
+meta:
+  favicon: /images/mark_light_bg.png
+  title: Nossa Visao
+  description: Temos vontade e temos un plan
+pagination:
+  enabled: true

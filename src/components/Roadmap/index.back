@@ -1,0 +1,100 @@
+import * as React from 'react';
+import cn from 'clsx';
+
+import { ActionBar, IActionBar } from 'src/components/ActionBar';
+import { Container } from 'src/components/Container';
+import { Image } from 'src/components/Image';
+import { Section } from 'src/components/Section';
+
+import style from './cases.scss'
+
+export interface IButton {
+    href: string;
+    caption?: string;
+}
+
+export interface IIcon {
+    name: string;
+    style?: string;
+}
+
+export interface ICase {
+    title: string;
+    subtitle: string;
+    description?: string;
+    bgColor: string;
+    hidden?: boolean;
+    button: IButton;
+    icon: IIcon;
+}
+
+export interface ICases {
+    title?: string;
+    subtitle?: string;
+    items: ICase[];
+    actionBar?: IActionBar;
+}
+
+export const Case: React.FunctionComponent<ICase> = ({
+    title,
+    subtitle,
+    description,
+    bgColor,
+    hidden,
+    button,
+    icon,
+    image
+}) => {
+    return (
+        <div className="col-lg-4 case_col magic_fade_in">
+	    <div className="case_item d-flex flex-column align-items-center justify-content-start text-center">
+		<div className="case_icon_container d-flex flex-column align-items-center justify-content-center">
+		    <div className="case_icon">
+                        <Image src={image} alt="https://www.flaticon.com/authors/freepik" />
+                    </div>
+		</div>
+		<div className="case_item_content">
+		    <div className="case_item_title" dangerouslySetInnerHTML={{ __html: title }}/>
+	            <div className="case_item_text" dangerouslySetInnerHTML={{ __html: description }}>
+	            </div>
+
+		    <div className="case_item_text" dangerouslySetInnerHTML={{ __html: subtitle }}>
+		    </div>
+	        </div>
+	    </div>
+	</div>
+    )
+}
+
+export const CaseStudies: React.FunctionComponent<ICases> = ({
+    title,
+    subtitle,
+    description,
+    cases,
+    actionBar,
+}) => {
+    if (!cases || !cases.length) {
+        return null;
+    }
+
+    return (
+        <Section id="case-studies" className={cn("cases", style)}>
+            <Container title={title} description={description}>
+		<div className="row">
+		    <div className="col magic_fade_in">
+			<div className="section_title text-center"><h2>How to get started</h2></div>
+		    </div>
+		</div>
+                <div className="row case_row">
+		    <div className="case_dots magic_fade_in">
+                        <svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent"/>
+                        </svg>
+                    </div>
+
+		</div>
+            </Container>
+            {actionBar && actionBar.enabled ? <ActionBar className="bg-grey-lightest sm:mt-20 mt-32" {...actionBar} /> : null}
+        </Section>
+    );
+};
