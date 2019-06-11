@@ -8,6 +8,8 @@ import { Container } from 'src/components/Container';
 import { Image } from 'src/components/Image';
 import { Section } from 'src/components/Section';
 
+import { Hero } from 'src/components/Hero';
+
 import './roadmap.scss'
 
 export interface IButton {
@@ -51,10 +53,10 @@ export const Milestone: React.FunctionComponent<IMilestone> = ({
     active
 }) => {
     return (
-        <div className={cn("sm:w-full flex px-14 pb-20 sm:px-0 sm:px-10 milestone_col magic_fade_in", {active} )}>
+        <div className={cn("sm:w-full flex px-4 pb-20 sm:px-0 sm:px-1 milestone_col magic_fade_in", {active} )}>
 	    <div className="milestone d-flex flex-column align-items-center justify-content-start text-center trans_200">
                 {image &&
-                 <div className="milestone_icon_container">
+                 <div className="milestone_icon_container mx-auto">
 	             <div className="milestone_icon ml-auto mr-auto">
                          <Image className="svg" src={image} alt="https://www.flaticon.com/authors/freepik"/>
                      </div>
@@ -88,30 +90,26 @@ export const Roadmap: React.FunctionComponent<IRoadmap> = ({
     }
 
     return (
-        <Section id="roadmap" className={cn("roadmap")}>
-            <Container title={title} description={description}>
-                <div className="row">
-	            <div className="col magic_fade_in">
-	                <div className="section_title text-center">
-                            <h2 dangerouslySetInnerHTML={{__html: subtitle}}/>
+        <React.Fragment>
+            <Hero title={title} subtitle={subtitle} className="small"/>
+            <Section id="roadmap" className={cn("roadmap")}>
+                <Container>
+                    <div className="row">
+	                <div className="roadmap_dots magic_fade_in">
+                            <Image src="/images/bezier.svg"/>
                         </div>
 	            </div>
-	        </div>
-                <div className="row roadmap_row">
-	            <div className="roadmap_dots magic_fade_in">
-                        <Image src="/images/bezier.svg"/>
+                    <div className="flex flex-wrap -mx-14 sm:mx-0 roadmap_row">
+                        {items.filter(milestone => !milestone.hidden)
+                              .map((milestone, index) => {
+                                  return <Milestone key={index} active={index === currentMilestone} {...milestone} />;
+                              })}
                     </div>
-	        </div>
-                <div className="flex flex-wrap -mx-14 sm:mx-0 roadmap_row">
-                    {items.filter(milestone => !milestone.hidden)
-                          .map((milestone, index) => {
-                              return <Milestone key={index} active={index === currentMilestone} {...milestone} />;
-                          })}
-                </div>
-            </Container>
+                </Container>
 
-            {actionBar && actionBar.enabled ? <ActionBar className="bg-grey-lightest sm:mt-20 mt-32" {...actionBar} /> : null}
-        </Section>
+                {actionBar && actionBar.enabled ? <ActionBar className="bg-grey-lightest sm:mt-20 mt-32" {...actionBar} /> : null}
+            </Section>
+        </React.Fragment>
     );
 };
 
