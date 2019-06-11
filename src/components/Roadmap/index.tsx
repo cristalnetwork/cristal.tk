@@ -28,6 +28,7 @@ export interface IMilestone {
     hidden?: boolean;
     button: IButton;
     icon: IIcon;
+    active?: boolean;
 }
 
 export interface IRoadmap {
@@ -35,6 +36,7 @@ export interface IRoadmap {
     subtitle?: string;
     items: IMilestone[];
     actionBar: IActionBar;
+    currentMilestone?: integer;
 }
 
 export const Milestone: React.FunctionComponent<IMilestone> = ({
@@ -45,10 +47,11 @@ export const Milestone: React.FunctionComponent<IMilestone> = ({
     hidden,
     button,
     icon,
-    image
+    image,
+    active
 }) => {
     return (
-        <div className="sm:w-full flex px-14 pb-20 sm:px-0 sm:px-10 milestone_col magic_fade_in">
+        <div className={cn("sm:w-full flex px-14 pb-20 sm:px-0 sm:px-10 milestone_col magic_fade_in", {active} )}>
 	    <div className="milestone d-flex flex-column align-items-center justify-content-start text-center trans_200">
                 {image &&
                  <div className="milestone_icon_container">
@@ -78,6 +81,7 @@ export const Roadmap: React.FunctionComponent<IRoadmap> = ({
     description,
     items,
     actionBar,
+    currentMilestone = 0
 }) => {
     if (!items || !items.length) {
         return null;
@@ -95,15 +99,13 @@ export const Roadmap: React.FunctionComponent<IRoadmap> = ({
 	        </div>
                 <div className="row roadmap_row">
 	            <div className="roadmap_dots magic_fade_in">
-                        <svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent"/>
-                        </svg>
+                        <Image src="/images/bezier.svg"/>
                     </div>
 	        </div>
                 <div className="flex flex-wrap -mx-14 sm:mx-0 roadmap_row">
                     {items.filter(milestone => !milestone.hidden)
                           .map((milestone, index) => {
-                              return <Milestone key={index} {...milestone} />;
+                              return <Milestone key={index} active={index === currentMilestone} {...milestone} />;
                           })}
                 </div>
             </Container>

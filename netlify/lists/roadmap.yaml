@@ -3,6 +3,7 @@ tag: 'roadmap'
 component: 'Roadmap'
 subtitle: O caminho pro Nirvana
 title: Mapa de desenvolvimento
+currentMilestone: 0
 actionBar:
   enabled: true
 pageName: Roadmap

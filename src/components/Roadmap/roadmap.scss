@@ -12,14 +12,16 @@
 .roadmap_dots
 {
     position: absolute;
-    top: -137px;
+    top: -25vh;
     left: 0;
-    width: 100%;
-    height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
 }
+.milestone_col {
+    flex: 1;
+}
+
 .milestone_icon_container
 {
     width: 143px;
@@ -27,7 +29,7 @@
     border-radius: 50%;
     background: #d5dfe3;
 }
-.milestone_col:nth-child(3) .milestone_icon_container
+.milestone_col.active .milestone_icon_container
 {
     background: #1befc5;
 }
@@ -48,7 +50,7 @@
     background: rgba(213,223,227,0.25);
     content: '';
 }
-.milestone_col:nth-child(3) .milestone_icon_container::before
+.milestone_col.active .milestone_icon_container::before
 {
     background: rgba(27,239,197,0.25);
 }
@@ -61,18 +63,18 @@
 {
     max-width: 100%;
 }
-.milestone_content
+.milestone_item_content
 {
     padding-top: 66px;
 }
-.milestone_title
+.milestone_item_title
 {
     font-size: 24px;
     font-weight: 700;
     color: #1f1d22;
     line-height: 1.2;
 }
-.milestone_text
+.milestone_item_text
 {
     margin-top: 27px;
 }
@@ -97,7 +99,6 @@
     line-height: 63px;
 }
 
-path {
-    stroke-width: 2;
-    stroke-dasharray: 5 5;
+.roadmap_dots img {
+    width: 100vw;
 }

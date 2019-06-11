@@ -9,6 +9,16 @@ export default {
     fields: [
         ...container.fields,
         {
+            name: 'component',
+            label: 'Component to Use',
+            widget: 'string'
+        },
+        {
+            name: 'currentMilestone',
+            label: 'what milestone are we at',
+            widget: 'number'
+        },
+        {
             name: 'milestone',
             label: 'Roadmap',
             widget: 'list',
