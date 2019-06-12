@@ -9,37 +9,41 @@ import { Businesses, IBusinesses } from 'src/sections/Businesses';
 import { Collage, ICollage } from 'src/sections/Collage';
 import { IPressSection, PressSection } from 'src/sections/PressSection';
 
+import './about.scss'
+
 export interface IMember {
-  image: string;
-  name: string;
-  role: string;
-  isLast: boolean;
+    image: string;
+    name: string;
+    role?: string;
+    from?: string;
+    isLast: boolean;
 }
 
 export interface IAbout {
-  color: string;
-  hero: IHero;
-  team: IMember[];
-  actionBar: IActionBar;
-  businesses: IBusinesses;
-  pressSection: IPressSection;
-  collage: ICollage;
+    color: string;
+    hero: IHero;
+    team: IMember[];
+    actionBar: IActionBar;
+    businesses: IBusinesses;
+    pressSection: IPressSection;
+    collage: ICollage;
 }
 
-const Member: React.FunctionComponent<IMember> = ({ image, name, role, isLast }) => {
-  return (
-    <div className={cn('mb-48 -mt-24 px-10 sm:px-0 sm:w-48', { 'sm:mb-24': isLast })}>
-      <div className="block text-center shadow bg-white py-10 sm:py-4 px-4 sm:px-0 h-64 w-64 sm:w-full rounded-lg">
-        <Image
-          src={image}
-          className="-mt-20 mx-auto rounded-full bg-center bg-contain shadow-sm border-grey border h-32 w-32 mb-10"
-          size="sm"
-          useDiv
-        />
+const Member: React.FunctionComponent<IMember> = ({ image, name, role, from, isLast }) => {
+    return (
+        <div className={cn('mb-48 -mt-24 px-10 sm:px-0 sm:w-48', { 'sm:mb-24': isLast })}>
+            <div className="block text-center shadow bg-white py-10 sm:py-4 px-4 sm:px-0 h-64 w-64 sm:w-full rounded-lg">
+                <Image
+                    src={image}
+                    className="-mt-20 mx-auto rounded-full bg-center bg-contain shadow-sm border-grey border h-32 w-32 mb-10"
+                    size="sm"
+                    useDiv
+                />
 
-        <div className="font-bold uppercase text-green">{name}</div>
+                <div className="font-bold uppercase text-green">{name}</div>
 
-        {role && <div className="pt-2 text-black">{role}</div>}
+                {role && <div className="pt-2 text-black">{role}</div>}
+                {from && <div className="from pt-2 text-grey">{from}</div>}
       </div>
     </div>
   );
