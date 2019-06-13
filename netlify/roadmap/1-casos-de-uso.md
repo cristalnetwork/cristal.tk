@@ -7,9 +7,8 @@ relatedTags:
 publishedDate: 'Jan 23, 2019'
 title: Casos de Uso
 subtitle: >-
-  O MVP será testado em 3 diferentes bancos comunitários, em países
-  diferentes.
-image: /images/logo_appointmentplus_transparent.png
+  Implementação do protocolo global de microempréstimos que será testado em 3 diferentes bancos comunitários, em países diferentes.
+image: /images/roadmap/transaction.svg
 color: blue
 sidebar:
   info:

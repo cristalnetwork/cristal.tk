@@ -9,7 +9,7 @@ title: Expansão da Rede
 subtitle: >-
   Outros bancos serão adicionados a rede Cristal, e outros bancos serão
   criados a partir da plataforma Cristal para bancos comunitários.
-image: /images/bodev_logo.png
+image: /images/roadmap/network.svg
 color: blue
 sidebar:
   info:

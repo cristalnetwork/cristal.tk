@@ -10,7 +10,7 @@ subtitle: >-
   Novos recursos e serviços bancários serão adicionados a plataforma,
   possibilitando uma expansão nos serviços financeiros oferecidos, como:
   crédito, seguros, etc.
-image: /images/arkea-logo-transparent-2x.png
+image: /images/roadmap/credit.svg
 color: orange
 tabs: []
 sidebar:

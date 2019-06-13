@@ -9,7 +9,7 @@ import { Businesses, IBusinesses } from 'src/sections/Businesses';
 import { Collage, ICollage } from 'src/sections/Collage';
 import { IPressSection, PressSection } from 'src/sections/PressSection';
 
-import './about.scss'
+// import './about.scss'
 
 export interface IMember {
     image: string;

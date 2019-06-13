@@ -26,6 +26,11 @@
     height: 10vw;
     border-radius: 50%;
     background: #d5dfe3;
+
+    justify-content: center!important;
+    align-items: center!important;
+    display: flex;
+    margin-bottom:5vw;
 }
 .milestone_col.active .milestone_icon_container
 {
@@ -99,4 +104,8 @@
 
 .roadmap_dots img {
     width: 100vw;
+}
+
+.milestone_title{
+    padding-bottom: 1vw;
 }

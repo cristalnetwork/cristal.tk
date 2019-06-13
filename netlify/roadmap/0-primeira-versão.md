@@ -8,7 +8,7 @@ publishedDate: 2019-05-01T23:47:44.182Z
 title: Primeira Versão
 subtitle: >-
   Uma versão inicial da plataforma está em desenvolvimento.
-image: /images/logo_appointmentplus_transparent.png
+image: /images/roadmap/lab.svg
 color: green
 tabs: []
 sidebar:
