@@ -30,7 +30,7 @@
     "netlify-cms": "2.3.x",
     "netlify-cms-widget-fontawesome": "3.1.0",
     "netlify-identity-widget": "1.4.14",
-    "prismjs": "1.16.x",
+    "prismjs": "1.25.x",
     "react": "16.5.x",
     "react-headroom": "^2.2.8",
     "react-localize-redux": "^3.5.3",
