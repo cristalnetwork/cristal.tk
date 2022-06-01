@@ -64,7 +64,7 @@
     "react-hot-loader": "^4.12.13",
     "sass-loader": "7.1.x",
     "serve": "10.1.x",
-    "sharp": "0.22.1",
+    "sharp": "0.30.5",
     "style-loader": "0.23.x",
     "ts-loader": "5.3.x",
     "typescript": "3.1.x"
